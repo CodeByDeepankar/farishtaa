@@ -33,7 +33,7 @@ const DoctorByCategory = () => {
         setLoading(true);
         const pos = await getPosition();
         const res = await fetch(
-          `https://farishtaa-backend.vercel.app/api/doctor/nearby-search/${category}`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/doctor/nearby-search/${category}`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

@@ -28,7 +28,7 @@ const ChatSidebar = () => {
     const fetchSessions = async () => {
       try {
         const res = await fetch(
-          `https://farishtaa-backend.vercel.app/api/patient/sessions/${userId}`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/patient/sessions/${userId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         if (!res.ok) {
@@ -49,7 +49,7 @@ const ChatSidebar = () => {
   const handleNewChat = async () => {
     try {
       const res = await fetch(
-        `https://farishtaa-backend.vercel.app/api/patient/sessions/${userId}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/patient/sessions/${userId}`,
         {
           method: "POST",
           headers: {
@@ -85,7 +85,7 @@ const ChatSidebar = () => {
     e.stopPropagation();
     try {
       await fetch(
-        `https://farishtaa-backend.vercel.app/api/patient/sessions/${userId}/${sessionId}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/patient/sessions/${userId}/${sessionId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
