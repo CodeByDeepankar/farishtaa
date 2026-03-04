@@ -25,10 +25,10 @@ const HospitalDoctorDetail = () => {
     const fetchData = async () => {
       try {
         const [docRes, revRes] = await Promise.all([
-          fetch(`https://farishtaa-backend.vercel.app/api/hospital-dashboard/doctors/${doctorId}`, {
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/api/hospital-dashboard/doctors/${doctorId}`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch(`https://farishtaa-backend.vercel.app/api/hospital-dashboard/doctors/${doctorId}/reviews`, {
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/api/hospital-dashboard/doctors/${doctorId}/reviews`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

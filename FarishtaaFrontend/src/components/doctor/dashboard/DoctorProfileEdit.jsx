@@ -38,7 +38,7 @@ const DoctorProfileEdit = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await fetch("https://farishtaa-backend.vercel.app/api/doctor-dashboard/profile", {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/doctor-dashboard/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -82,7 +82,7 @@ const DoctorProfileEdit = () => {
     setSaving(true);
 
     try {
-      const res = await fetch("https://farishtaa-backend.vercel.app/api/doctor-dashboard/profile", {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/doctor-dashboard/profile`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

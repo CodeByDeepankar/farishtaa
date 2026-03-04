@@ -41,7 +41,7 @@ const DoctorProfile = () => {
     const fetchDoctor = async () => {
       try {
         const res = await fetch(
-          `https://farishtaa-backend.vercel.app/api/doctor/view-profile/${doctorId}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/doctor/view-profile/${doctorId}`
         );
         const data = await res.json();
         setDoctor(data.doctor);
@@ -60,7 +60,7 @@ const DoctorProfile = () => {
     setSubmitting(true);
     try {
       const res = await fetch(
-        `https://farishtaa-backend.vercel.app/api/doctor/add-review`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/doctor/add-review`,
         {
           method: "POST",
           headers: {
